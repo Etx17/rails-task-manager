@@ -1,0 +1,9 @@
+<h1>Tasks#edit</h1>
+<p>Find me in app/views/tasks/edit.html.erb</p>
+
+  <%= form_for @task do |f| %>
+  Title: <%= f.text_field :title %><br />
+  details : <%= f.text_field :details %><br />
+  completed : <%= f.check_box :completed %><br />
+  <%= f.submit %>
+<% end %>

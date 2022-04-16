@@ -1,0 +1,17 @@
+<h1>Tasks Manager</h1>
+<% @tasks.each do |task| %>
+<li>
+  <% if task.completed == true %>
+    |X|
+  <% else %>
+    |O|
+  <% end %>
+  <label for="<%= task.id %>">
+    <a href="/tasks/<%= task.id %>">
+      <%= task.title %>
+    </a>
+  </label>
+  <%= link_to "Delete #{task.title}", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
+</li>
+<% end %>
+<%= link_to "New Task", tasks_new_path %>
